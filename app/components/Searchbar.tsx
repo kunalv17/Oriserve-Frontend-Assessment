@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { SearchIcon, PrevIcon } from "./icons";
 import { useForm } from "react-hook-form";
 import { useSearchContext } from "../context/SearchContect";
@@ -90,6 +90,14 @@ function Searchbar() {
               ))}
             </div>
             <div className="relative h-14">
+              <button
+                onClick={() => {
+                  setIsPrevSearchModalOpen(false);
+                }}
+                className="m-2 p-2 absolute right-20 bottom-0 justify-self-end px-4 bg-gray-500 text-white rounded-lg"
+              >
+                Close
+              </button>
               <button
                 onClick={() => {
                   setPrevSearch([]);
