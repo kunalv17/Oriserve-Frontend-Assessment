@@ -34,7 +34,7 @@ function Body() {
     if (scrollToTopRef.current) {
       scrollToTopRef.current.scrollIntoView({
         behavior: "smooth",
-        block: "start",
+        block: "center",
       });
     }
   }
@@ -89,8 +89,8 @@ function Body() {
 
   return (
     <>
-      <div ref={scrollToTopRef} />
-      <div className="mt-40 sm:mt-32 lg:mt-24 px-4">
+      <div className="h-40 sm:h-32 lg:h-24" ref={scrollToTopRef} />
+      <div className="px-4">
         <InfiniteScroll
           className="flex flex-wrap justify-between w-full scroll-smooth"
           dataLength={initialPhotos?.length}
